@@ -20,4 +20,9 @@ class WelcomeViewModel : ViewModel() {
         Timber.i("onShoeList")
         _buttonInstructions.value = true
     }
+
+    fun onShoeListComplete(){
+        Timber.i("onShoeList")
+        _buttonInstructions.value = false
+    }
 }

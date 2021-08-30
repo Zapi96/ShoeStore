@@ -37,9 +37,7 @@ class LoginFragment : Fragment() {
         viewModel.buttonRegister.observe(viewLifecycleOwner, Observer{button ->
 
             if (button){
-
-//                val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
-//                NavHostFragment.findNavController(this).navigate(action)
+                viewModel.onInstructionsComplete()
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
             }
         })

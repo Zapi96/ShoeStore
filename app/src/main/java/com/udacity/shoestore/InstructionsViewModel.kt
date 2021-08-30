@@ -19,4 +19,9 @@ class InstructionsViewModel : ViewModel() {
         Timber.i("onShoeList")
         _buttonShoeList.value = true
     }
+
+    fun onShoeListComplete(){
+        Timber.i("onShoeList")
+        _buttonShoeList.value = false
+    }
 }

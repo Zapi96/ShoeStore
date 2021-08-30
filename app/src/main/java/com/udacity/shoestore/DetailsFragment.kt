@@ -17,7 +17,6 @@ class DetailsFragment : Fragment() {
 
     private lateinit var viewModel: ShoeListViewModel
     private lateinit var binding: DetailsFragmentBinding
-//    private val sharedViewModel: ShoeListViewModel by activityViewModels()
 
 
 
@@ -35,12 +34,6 @@ class DetailsFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         binding.shoelistViewModel = viewModel
         binding.setLifecycleOwner(this)
-
-
-//        binding.buttonCancel.setOnClickListener {
-//
-//            findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToShoeListFragment())
-//        }
 
 
         viewModel.buttonCancel.observe(viewLifecycleOwner, Observer{button ->
@@ -63,8 +56,5 @@ class DetailsFragment : Fragment() {
         return binding.root
     }
 
-    private fun createShoeView(){
-
-    }
 
 }

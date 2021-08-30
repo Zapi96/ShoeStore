@@ -9,7 +9,6 @@ import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 
 class ShoeListViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
 
 
 
@@ -51,17 +50,6 @@ class ShoeListViewModel : ViewModel() {
     val shoeList : LiveData<List<Shoe>>
         get() = _shoeList
 
-//    init {
-//        Timber.i("ShoelistCreated")
-//
-//        _buttonCancel.value = false
-//        _buttonSave.value = false
-//        _buttonDetails.value = false
-//        _name.value = ""
-//        _description.value = ""
-//        _company.value = ""
-//
-//    }
 
     fun onCancel(){
         _buttonCancel.value = true

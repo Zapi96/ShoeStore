@@ -33,7 +33,6 @@ class ShoeListFragment : Fragment() {
             false
         )
 
-//        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
 
         binding.listViewModel = viewModel
@@ -42,18 +41,14 @@ class ShoeListFragment : Fragment() {
         viewModel.buttonDetails.observe(viewLifecycleOwner, Observer{button ->
             if (button){
                 viewModel.onDetailsComplete()
-
                 findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToDetailsFragment())
             }
         })
 
 
-
-
         viewModel.shoeList.observe(viewLifecycleOwner, Observer{button ->
             addNewShoeView(inflater)
         })
-
 
         setHasOptionsMenu(true)
 

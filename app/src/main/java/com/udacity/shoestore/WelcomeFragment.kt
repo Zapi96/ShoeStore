@@ -38,6 +38,7 @@ class WelcomeFragment : Fragment() {
             if (button){
 //                val action = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment()
 //                NavHostFragment.findNavController(this).navigate(action)
+                viewModel.onShoeListComplete()
                 findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment())
             }
         })

@@ -24,4 +24,9 @@ class LoginViewModel : ViewModel() {
         Timber.i("onInstructions")
         _buttonRegister.value = true
     }
+
+    fun onInstructionsComplete(){
+        Timber.i("onInstructions")
+        _buttonRegister.value = false
+    }
 }

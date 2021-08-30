@@ -34,9 +34,7 @@ class InstructionsFragment : Fragment() {
 
         viewModel.buttonShoeList.observe(viewLifecycleOwner, Observer{button ->
             if (button){
-//                val action = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
-//                NavHostFragment.findNavController(this).navigate(action)
-
+                viewModel.onShoeListComplete()
                 findNavController().navigate(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment())
             }
         })
