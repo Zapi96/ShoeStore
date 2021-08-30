@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoelistViewModel"
+            type="com.udacity.shoestore.ShoeListViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:context=".DetailsFragment">
+
+        <TextView
+            android:id="@+id/titleDetails"
+            style="@style/NameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titleDetails"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/shoeExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/shoeExampleDescription"
+            android:src="@android:drawable/btn_star_big_on" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/shoeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shoeName"
+                    android:afterTextChanged="@{shoelistViewModel::setName}"
+                    android:inputType="textPersonName|textImeMultiLine" />
+
+                <EditText
+                    android:id="@+id/shoeSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shoeSize"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/shoeCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shoeCompany"
+                    android:afterTextChanged="@{shoelistViewModel::setCompany}"
+
+                    android:inputType="textPersonName|textImeMultiLine" />
+
+                <EditText
+                    android:id="@+id/shoeDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shoeDescription"
+                    android:afterTextChanged="@{shoelistViewModel::setDescription}"
+                    android:inputType="textPersonName|textImeMultiLine" />
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->shoelistViewModel.onSave()}"
+                    android:text="@string/buttonSave" />
+
+                <Button
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->shoelistViewModel.onCancel()}"
+                    android:text="@string/buttonCancel" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>
