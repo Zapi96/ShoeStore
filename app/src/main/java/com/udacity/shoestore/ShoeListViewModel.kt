@@ -10,8 +10,6 @@ import timber.log.Timber
 
 class ShoeListViewModel : ViewModel() {
 
-
-
     private var _buttonDetails = MutableLiveData<Boolean>()
     val buttonDetails : LiveData<Boolean>
         get() = _buttonDetails
@@ -32,8 +30,8 @@ class ShoeListViewModel : ViewModel() {
     val description: LiveData<String>
         get() = _description
 
-    private var _size = MutableLiveData<Float>()
-    val size: LiveData<Float>
+    private var _size = MutableLiveData<String>()
+    val size: LiveData<String>
         get() = _size
 
     private var _company = MutableLiveData<String>()
@@ -49,6 +47,13 @@ class ShoeListViewModel : ViewModel() {
     private var _shoeList = MutableLiveData<List<Shoe>>()
     val shoeList : LiveData<List<Shoe>>
         get() = _shoeList
+
+    init {
+        _name.value = ""
+        _description.value = ""
+        _company.value = ""
+        _size.value = "null"
+    }
 
 
     fun onCancel(){
@@ -80,8 +85,17 @@ class ShoeListViewModel : ViewModel() {
         _company.value = s.toString()
     }
 
+    fun setSize(s: Editable){
+        _size.value = s.toString()
+    }
+
     private fun newShoe(){
-        shoelst += Shoe(_name.value.toString(),0.0,_company.value.toString(),_description.value.toString())
+        if (_size.value == "null"){
+            shoelst += Shoe(_name.value.toString(),0.0,_company.value.toString(),_description.value.toString())
+
+        }else{
+            shoelst += Shoe(_name.value.toString(),_size.value.toString().toDouble(),_company.value.toString(),_description.value.toString())
+        }
         _shoeList.value = shoelst
     }
 

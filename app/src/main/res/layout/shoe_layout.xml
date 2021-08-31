@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="shoe"
             type="com.udacity.shoestore.models.Shoe"/>
     </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--The easiest way to create the shoe layout is using a ConstraintLayout, since it allows to
+     place the image to the left of the text-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containeList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/containeList">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/shoeImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/shoeimagecontent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,41 +29,84 @@
 
         <TextView
             android:id="@+id/shoeNameList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:text="@{shoe.name}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintStart_toEndOf="@+id/layoutName"
             app:layout_constraintTop_toTopOf="@+id/shoeImage" />
 
         <TextView
             android:id="@+id/shoeSizeList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{`` + shoe.size}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintStart_toEndOf="@+id/layoutSize"
             app:layout_constraintTop_toBottomOf="@+id/shoeNameList" />
 
         <TextView
             android:id="@+id/shoeDescriptionList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
             android:text="@{shoe.description}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintStart_toEndOf="@+id/layoutDescription"
             app:layout_constraintTop_toBottomOf="@+id/shoeSizeList" />
 
         <TextView
             android:id="@+id/shoeCompanyList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
             android:text="@{shoe.company}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintStart_toEndOf="@+id/layoutCompany"
             app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionList" />
+
+        <TextView
+            android:id="@+id/layoutName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/nameText"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoeNameList"
+            app:layout_constraintStart_toEndOf="@+id/shoeImage" />
+
+        <TextView
+            android:id="@+id/layoutSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/sizeText"
+            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintTop_toBottomOf="@+id/layoutName" />
+
+        <TextView
+            android:id="@+id/layoutDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/descriptionText"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoeDescriptionList"
+            app:layout_constraintStart_toEndOf="@+id/shoeImage" />
+
+        <TextView
+            android:id="@+id/layoutCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/companyText"
+            app:layout_constraintStart_toEndOf="@+id/shoeImage"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

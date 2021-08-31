@@ -29,6 +29,11 @@
     <string name="done">Done</string>
     <string name="buttonSave">SAVE</string>
     <string name="buttonCancel">CANCEL</string>
+    <string name="shoeimagecontent">shoeimage</string>
+    <string name="nameText">Name:</string>
+    <string name="sizeText">Size:</string>
+    <string name="companyText">Company:</string>
+    <string name="descriptionText">Description:</string>
 
 
 </resources>

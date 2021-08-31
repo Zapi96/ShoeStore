@@ -9,7 +9,7 @@
             type="com.udacity.shoestore.ShoeListViewModel"/>
     </data>
 
-
+    <!--A constrainlayout allows us to easily implement the floating button-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

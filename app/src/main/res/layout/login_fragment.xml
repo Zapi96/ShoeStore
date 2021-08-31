@@ -9,7 +9,8 @@
             type="com.udacity.shoestore.LoginViewModel"/>
     </data>
 
-
+    <!--A constraint layoot is easier to be used in this case in order to properly place the buttons
+     under the username and password boxes-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

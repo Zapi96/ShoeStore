@@ -9,6 +9,8 @@
             type="com.udacity.shoestore.WelcomeViewModel"/>
     </data>
 
+    <!--In this case a ConstraintLayout allows to create the welcome screen since it is easy to
+    place the welcome button-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome"
         android:layout_width="match_parent"

@@ -10,6 +10,8 @@
             type="com.udacity.shoestore.InstructionsViewModel"/>
     </data>
 
+    <!--In this case a ConstraintLayout allows to create the instructions screen since it is easy to
+    place the instructions button-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
